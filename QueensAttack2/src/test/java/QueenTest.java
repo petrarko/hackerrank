@@ -78,5 +78,40 @@ public class QueenTest {
     }
 
 
+    @org.junit.Test
+    public void getNumberOfAttackedSquares7() throws Exception {
+        Queen queen = new Queen(7, new Coordinate(3, 3), Coordinate.build(5, 6,
+                6,2,
+                3,1,
+                1,4,
+                7,7,
+                4,6
+        ));
+        assertEquals(20, queen.getNumberOfAttackedSquares());
+    }
+
+
+    @org.junit.Test
+    public void getNumberOfAttackedSquares8() throws Exception {
+        Queen queen = new Queen(7, new Coordinate(4, 2), Coordinate.build(5, 6,
+                6,2,
+                3,1,
+                1,4,
+                7,7,
+                4,6
+        ));
+        assertEquals(new Coordinate(3, -1), queen.getClosestObstracles().get(Vertical.NINE));
+        assertEquals(new Coordinate(5, -1), queen.getClosestObstracles().get(Vertical.ELEVEN));
+        assertEquals(new Coordinate(5, 1), queen.getClosestObstracles().get(Vertical.TWELVE));
+        assertEquals(new Coordinate(7, 5), queen.getClosestObstracles().get(Vertical.ONE));
+        assertEquals(new Coordinate(3, 5), queen.getClosestObstracles().get(Vertical.THREE));
+        assertEquals(new Coordinate(-1, 5), queen.getClosestObstracles().get(Vertical.FIVE));
+        assertEquals(new Coordinate(-1, 1), queen.getClosestObstracles().get(Vertical.SIX));
+        assertEquals(new Coordinate(2, 0), queen.getClosestObstracles().get(Vertical.SEVEN));
+        assertEquals(15, queen.getNumberOfAttackedSquares());
+    }
+
+
+
 
 }

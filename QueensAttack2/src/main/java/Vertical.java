@@ -25,7 +25,7 @@ enum Vertical {
             }
             return NONE;
         } else if (point.getX() == queen.getX()) {
-            return point.getY() > point.getY() ? THREE : NINE;
+            return point.getY() > queen.getY() ? THREE : NINE;
         } else {
             if (point.getY() == queen.getY()) {
                 return SIX;

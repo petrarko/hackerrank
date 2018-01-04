@@ -48,6 +48,11 @@ public class VerticalTest {
     }
 
 
+    @Test
+    public void createInitialVerticalMap4() throws Exception {
+        assertEquals(Vertical.THREE, Vertical.detectType(new Coordinate(3, 1), new Coordinate(3,5)));
+    }
+
 
 
 }
