@@ -16,7 +16,7 @@ enum Vertical {
 
     public static Vertical detectType(Coordinate queen, Coordinate point) {
         if (point.getX() > queen.getX()) {
-            if (point.getY() == point.getY()) {
+            if (point.getY() == queen.getY()) {
                 return TWELVE;
             }else if(point.getY()-queen.getY()==point.getX()-queen.getX()){
                 return ONE;
@@ -27,7 +27,7 @@ enum Vertical {
         } else if (point.getX() == queen.getX()) {
             return point.getY() > point.getY() ? THREE : NINE;
         } else {
-            if (point.getY() == point.getY()) {
+            if (point.getY() == queen.getY()) {
                 return SIX;
             }else if(point.getY()-queen.getY()==point.getX()-queen.getX()){
                 return SEVEN;

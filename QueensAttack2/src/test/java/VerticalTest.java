@@ -29,6 +29,24 @@ public class VerticalTest {
     }
 
 
+    @Test
+    public void createInitialVerticalMap1() throws Exception {
+        Map<Vertical, Coordinate> initialVerticalMap = Vertical.createInitialVerticalMap(new Coordinate(5, 3), 7);
+        assertEquals(Vertical.SEVEN, Vertical.detectType(new Coordinate(5, 3), new Coordinate(2,0)));
+        assertEquals(new Coordinate(1, -1), initialVerticalMap.get(Vertical.SEVEN));
+    }
+
+    @Test
+    public void createInitialVerticalMap2() throws Exception {
+        Map<Vertical, Coordinate> initialVerticalMap = Vertical.createInitialVerticalMap(new Coordinate(1, 5), 7);
+        assertEquals(Vertical.ELEVEN, Vertical.detectType(new Coordinate(1, 5), new Coordinate(5,1)));
+    }
+
+    @Test
+    public void createInitialVerticalMap3() throws Exception {
+        assertEquals(Vertical.NINE, Vertical.detectType(new Coordinate(1, 5), new Coordinate(1,4)));
+    }
+
 
 
 
