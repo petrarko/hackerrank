@@ -16,12 +16,12 @@ public class QueenTest {
     @org.junit.Test
     public void getNumberOfAttackedSquares1() throws Exception {
 
-        Queen queen = new Queen(4, new Coordinate(4, 4), Coordinate.build(5, 3,
-                4, 3,
-                5, 5,
+        Queen queen = new Queen(5, new Coordinate(4, 3), Coordinate.build(5, 5,
                 4, 2,
                 2, 3));
-        assertEquals(19, queen.getNumberOfAttackedSquares());
+        assertEquals(10, queen.getNumberOfAttackedSquares());
     }
+
+
 
 }
